@@ -8,4 +8,7 @@ describe Ingredient do
     expect(gorgonzola).to respond_to (:percentage)
   end
 
+  it 'should have stored attributes for fat, sugar, lean_milk_solids, other_solids and water' do
+    expect(gorgonzola.percentage[:fat]).to eq 28
+  end
 end
