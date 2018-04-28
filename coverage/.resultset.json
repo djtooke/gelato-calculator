@@ -2,15 +2,26 @@
   "RSpec": {
     "coverage": {
       "/Users/daniel/Desktop/Makers/gelato/spec/gelato_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
         null,
         null,
+        null
+      ],
+      "/Users/daniel/Desktop/Makers/gelato/lib/gelato.rb": [
+        1,
         null,
+        1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
         null,
         null,
         null
@@ -53,6 +64,6 @@
         null
       ]
     },
-    "timestamp": 1524918059
+    "timestamp": 1524918267
   }
 }
