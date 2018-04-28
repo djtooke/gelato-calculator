@@ -5,7 +5,7 @@ describe Ingredient do
   subject(:gorgonzola) {Ingredient.new(28, 0, 20, 2, 50)}
 
   it 'should have an accessible hash with its constituent percentages' do
-    expect(gorgonzola).to respond_to (:percentage)
+    expect(gorgonzola.percentage).to be_a(Hash)
   end
 
   it 'should store given attributes within the percentage hash' do
