@@ -14,6 +14,12 @@ describe Gelato do
       subject.add_ingredient(gorgonzola, 280)
       expect(subject.ingredients).to eq({gorgonzola => 280})
     end
+
+    it 'should raise an error if anything than an integer is given for the weight' do
+      expect{ subject.add_ingredient(gorgonzola, 'string') }.to raise_error('Weight in grams must be an integer.')
+    end
   end
+
+
 
 end

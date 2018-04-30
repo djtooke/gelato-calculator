@@ -7,6 +7,7 @@ class Gelato
   end
 
   def add_ingredient(ingredient, grams)
+    raise 'Weight in grams must be an integer.' unless grams.instance_of?(Integer)
     @ingredients.store(ingredient, grams)
   end
 
