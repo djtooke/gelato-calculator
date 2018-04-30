@@ -6,4 +6,8 @@ class Gelato
     @ingredients = {}
   end
 
+  def add_ingredient(ingredient, grams)
+    @ingredients.store(ingredient, grams)
+  end
+
 end
