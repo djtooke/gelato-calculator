@@ -23,4 +23,6 @@ gorgonzola_and_honey.add_ingredient(lmp, 40)
 gorgonzola_and_honey.add_ingredient(stabilisers, 4)
 gorgonzola_and_honey.add_ingredient(cream, 220)
 
+calc = Calculator.new(gorgonzola_and_honey)
+
 binding.pry

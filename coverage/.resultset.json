@@ -6,10 +6,24 @@
         null,
         1,
         null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/daniel/Desktop/Makers/gelato/lib/calculator.rb": [
         1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/daniel/Desktop/Makers/gelato/spec/gelato_spec.rb": [
@@ -108,6 +122,6 @@
         null
       ]
     },
-    "timestamp": 1525194922
+    "timestamp": 1525255132
   }
 }
