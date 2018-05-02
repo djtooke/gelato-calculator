@@ -1,9 +1,10 @@
 class Calculator
 
-# Create scalar
+  attr_reader :gelato
+
   def initialize(gelato)
-    raise "#{gelato} is not a Gelato object."
-    @gelato = gelato #need test to make sure this is a gelato object
+    raise "#{gelato} is not a Gelato object." unless gelato.class == Gelato
+    @gelato = gelato
   end
 
 end
