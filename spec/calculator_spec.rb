@@ -33,7 +33,7 @@ describe Calculator do
   end
 
   it 'should calculate and store the percentages of each ingredient in a hash' do
-    expect(calc.percentages).to eq({
+    expect(calc.ingredient_percentages).to eq({
       :milk => 53.0,
       :gorgonzola => 14.8,
       :honey => 5.3,
@@ -43,6 +43,10 @@ describe Calculator do
       :stabilisers => 0.2,
       :cream => 11.7
       })
-    end
+  end
+
+  it 'should calculate and store the percentages of the ingredient constituents' do
+
+  end
 
 end
