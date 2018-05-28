@@ -23,14 +23,14 @@ describe Calculator do
     expect(calc.gelato).to eq(gorgonzola_and_honey)
   end
 
-  it 'should work out the scalar of the ingredient weights' do
-    expect(calc.scalar).to eq(0.053)
+  it 'should work out the total of the ingredient weights' do
+    expect(calc.weight).to eq(1884)
   end
 
   it 'should calculate and store the percentages of each ingredient in a hash' do
     expect(calc.ingredient_percentages).to eq({
-      milk => 53.0,
-      gorgonzola => 14.8,
+      milk => 53.1,
+      gorgonzola => 14.9,
       honey => 5.3,
       sucrose => 10.1,
       dextrose => 2.7,
@@ -48,7 +48,16 @@ describe Calculator do
       :other_solids => 9.6,
       :water => 1189.0
       })
+  end
 
+  it 'should calculate and store the total percentages of the constituents' do
+    expect(calc.constituent_percentages).to eq({
+      :fat => 9.1,
+      :sugar => 16.8,
+      :lean_milk_solids => 10.5,
+      :other_solids => 0.5,
+      :water => 63.1
+      })
   end
 
 end
