@@ -1,8 +1,9 @@
 class Calculator
 
-  attr_reader :gelato, :weight, :ingredient_percentages, :constituent_grams, :constituent_percentages
+  attr_reader :gelato, :weight, :ingredient_percentages, :constituent_grams, :constituent_percentages, :assessments
 
   CONSTITUENTS = [:fat, :sugar, :lean_milk_solids, :other_solids, :water]
+  IDEAL_CONSTITUENT_RANGES = {fat: 6...12, sugar: 16...22, lean_milk_solids: 8...12, other_solids: 0...100, water: 58...68}
 
   def initialize(gelato)
     raise "#{gelato} is not a Gelato object." unless gelato.class == Gelato
@@ -13,6 +14,7 @@ class Calculator
     @constituent_percentages = {} #(Re)created in calculate_constituent_percentages
     @assessments = {} #(Re)created in check_percentages
     evaluate
+    puts @assessments
   end
 
   def calculate(gelato = @gelato)
@@ -61,6 +63,10 @@ private
 
   def compare_percentages
     @assessments = {}
+    @constituent_percentages.each do |constituent, percentage|
+      assessment = IDEAL_CONSTITUENT_RANGES[constituent] === percentage ? true : false
+      assessments.store(constituent, assessment)
+    end
   end
 
 end

@@ -60,4 +60,14 @@ describe Calculator do
       })
   end
 
+  it 'should assess whether the constituent percentages are in the ideal ranges' do
+    expect(calc.assessments).to eq({
+      :fat => true,
+      :sugar => true,
+      :lean_milk_solids => true,
+      :other_solids => true,
+      :water => true
+      })
+  end
+
 end
