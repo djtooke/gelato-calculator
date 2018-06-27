@@ -35,7 +35,16 @@ describe Gelato do
     it 'should remove an ingredient from the ingredients hash' do
       subject.add_ingredient(gorgonzola, 280)
       subject.remove_ingredient(gorgonzola)
+      p subject
       expect(subject.ingredients).not_to include(gorgonzola)
+    end
+
+    it 'should raise an error if ingredient is not an ingredient object' do
+      expect{ subject.remove_ingredient('string') }.to raise_error('Ingredient must be an ingredient object.')
+    end
+
+    it 'should raise an error if ingredient is not yet added to the gelato' do
+      expect{ subject.remove_ingredient(gorgonzola) }.to raise_error('Ingredient has not been added to the gelato yet')
     end
 
 
