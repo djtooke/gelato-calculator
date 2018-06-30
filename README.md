@@ -37,6 +37,10 @@ Ingredients can also be removed from the gelato with the `remove_ingredient` met
 
 `stracciatella.remove_ingredient(cream)`
 
+You can also update the number of grams of an ingredient using `modify_grams`, passing in the ingredient and a new weight in grams:
+
+`stracciatella.modify_grams(cream, 300)`
+
 At any time it is possible to run `.ingredients` on your gelato object to see a list of ingredients. Once all the ingredients have been added to the gelato, it can be passed to a calculator object to run the necessary calculations:
 
 `calc = Calculator.new(stracciatella)`
@@ -57,7 +61,6 @@ This calculator will then print a hash letting you know whether the constituents
 
  ### To improve
  A list of changes and improvements I would like to make include:
- * Adding an `update_grams` method to change the weight in grams of a particular ingredient.
  * An improved calculator output which tells you whether the constituent percentages are too high or too low, rather than boolean values of whether they're within the correct range
  * The calculator class is too bloated, and contains information which should rightly be stored in the Gelato object. I would like to reassess this division of state and behaviour, as well as extracting a printer class.
- * The next stage of development will be to use this code as the backend of a web app, likely hosted in Sinatra, where one can interact with ingredients in a web-based table, and make the calculations while also displaying information such as the constituent quantities. 
+ * The next stage of development will be to use this code as the backend of a web app, likely hosted in Sinatra, where one can interact with ingredients in a web-based table, and make the calculations while also displaying information such as the constituent quantities.
