@@ -35,7 +35,6 @@ describe Gelato do
     it 'should remove an ingredient from the ingredients hash' do
       subject.add_ingredient(gorgonzola, 280)
       subject.remove_ingredient(gorgonzola)
-      p subject
       expect(subject.ingredients).not_to include(gorgonzola)
     end
 
@@ -47,6 +46,18 @@ describe Gelato do
       expect{ subject.remove_ingredient(gorgonzola) }.to raise_error('Ingredient has not been added to the gelato yet')
     end
 
+  end
+
+  describe 'modify_grams' do
+
+    it 'should change the number of grams recorded for an ingredient' do
+      subject.add_ingredient(gorgonzola, 280)
+      expect{ subject.modify_grams(gorgonzola, 200) }.to change { subject.ingredients[gorgonzola] }.by(-80)
+    end
+
+    it 'should raise an error if modifying weight of an ingredient not yet added to the gelato' do
+      expect{ subject.modify_grams(gorgonzola, 200) }.to raise_error('Ingredient has not been added to the gelato yet')
+    end
 
   end
 
